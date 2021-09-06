@@ -1,0 +1,26 @@
+{
+    "name": "codergals-foundry-macros",
+    "description": "A collection of macros for FoundryVTT I use in my games",
+    "author": {
+        "name": "Sophia Pearson",
+        "email": "codergal89@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/codergal89/foundry-macros.git"
+    },
+    "version": "1.0.0",
+    "license": "MIT",
+    "devDependencies": {
+        "@league-of-foundry-developers/foundry-vtt-types": "^0.8.9-2",
+        "@types/nedb": "^1.8.0",
+        "nedb": "^1.8.0",
+        "ts-node": "^10.2.0",
+        "typescript": "^4.3.0"
+    },
+    "scripts": {
+        "build": "tsc --build && ts-node tools/create-pack.ts",
+        "clean": "tsc --build --clean",
+        "zip": "(cp LICENSE module && cd module && zip -r ../module.zip module.json LICENSE packs scripts/lib)"
+    }
+}

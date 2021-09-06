@@ -1,0 +1,33 @@
+{
+  "name": "cg89-macros",
+  "title": "Codergal89's Macros",
+  "description": "A pack of macros by codergal89",
+  "author": "Sophia Pearson",
+  "authors": [],
+  "url": "https://github.com/codergal89/foundry-macros",
+  "bugs": "https://github.com/codergal89/foundry-macros/issues",
+  "flags": {},
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.8.5",
+  "compatibleCoreVersion": "0.8.9",
+  "scripts": [
+    "scripts/lib/InteractiveDialog.js",
+    "scripts/lib/TokenAccess.js"
+  ],
+  "packs": [
+    {
+      "name": "macros",
+      "label": "Codergal89's Macros",
+      "path": "./packs/macros.db",
+      "private": true,
+      "entity": "Macro"
+    }
+  ],
+  "system": [
+    "dnd5e"
+  ],
+  "socket": false,
+  "manifest": "https://github.com/codergal89/foundry-macros/releases/latest/download/module.zip",
+  "download": "https://github.com/codergal89/foundry-macros/releases/latest/download/module.json",
+  "protected": false
+}
