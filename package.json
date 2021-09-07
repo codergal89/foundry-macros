@@ -9,7 +9,7 @@
         "type": "git",
         "url": "https://github.com/codergal89/foundry-macros.git"
     },
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "devDependencies": {
         "@league-of-foundry-developers/foundry-vtt-types": "^0.8.9-2",
@@ -19,6 +19,7 @@
         "typescript": "^4.3.0"
     },
     "scripts": {
+        "prebuild": "ts-node tools/create-manifest.ts",
         "build": "tsc --build && ts-node tools/create-pack.ts",
         "clean": "tsc --build --clean",
         "zip": "(cp LICENSE module && cd module && zip -r ../module.zip module.json LICENSE packs scripts/lib)"
