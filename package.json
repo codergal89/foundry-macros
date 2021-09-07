@@ -20,7 +20,8 @@
     },
     "scripts": {
         "prebuild": "ts-node tools/create-manifest.ts",
-        "build": "tsc --build && ts-node tools/create-pack.ts",
+        "build": "tsc --build",
+        "postbuild": "ts-node tools/create-pack.ts",
         "clean": "tsc --build --clean",
         "zip": "(cp LICENSE module && cd module && zip -r ../module.zip module.json LICENSE packs scripts/lib)"
     }
