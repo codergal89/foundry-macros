@@ -1,0 +1,38 @@
+---
+name: 'publish-pre-release'
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  publish-pre-release:
+    name: 'Publish Pre Release'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Checkout Sources'
+        uses: actions/checkout@v2
+
+      - name: 'Prepare NodeJS Installation'
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+
+      - name: 'Install NodeJS Depedencies'
+        run: npm install
+
+      - name: 'Build Module'
+        run: npm run build
+
+      - name: 'Create Github Release'
+        uses: 'marvinpinto/action-automatic-releases@latest'
+        with:
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          automatic_release_tag: 'latest'
+          prerelease: true
+          title: 'Pre-Release'
+          files: |
+            module.zip
+            module/module.json
