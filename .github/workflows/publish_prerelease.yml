@@ -26,6 +26,9 @@ jobs:
       - name: 'Build Module'
         run: npm run build
 
+      - name: 'Package Module'
+        run: npm run zip
+
       - name: 'Create Github Release'
         uses: 'marvinpinto/action-automatic-releases@latest'
         with:
